@@ -8,7 +8,6 @@ out/
 # Archivos de configuración de IDE
 .idea/
 *.iml
-.vscode/
 .settings/
 .classpath
 .project
@@ -18,4 +17,4 @@ out/
 Thumbs.db
 
 # Logs
-*.log 
+*.log
