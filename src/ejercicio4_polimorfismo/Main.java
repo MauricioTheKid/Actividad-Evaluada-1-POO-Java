@@ -2,21 +2,21 @@ package ejercicio4_polimorfismo;
 
 /**
  * Clase principal para probar el polimorfismo.
- * 
+ *
  * @author José Mauricio Chavarría González - cg92088
  * @author Kelvin Antonio Velázquez Vásquez - vv22015
- * @version 1.0
+ * @version 1.1
  * @since Agosto 2026
  */
 public class Main {
     public static void main(String[] args) {
         System.out.println("==========================================");
-        System.out.println("   EJERCICIO 4: POLIMORFISMO             ");
+        System.out.println(" EJERCICIO 4: POLIMORFISMO ");
         System.out.println("==========================================\n");
 
         System.out.println("--- Demostración de polimorfismo ---");
 
-        // Referencias de tipo Animal
+        // Referencias de tipo Animal apuntando a objetos concretos
         Animal animal1 = new Perro();
         Animal animal2 = new Gato();
 
@@ -25,7 +25,7 @@ public class Main {
         animal2.hacerSonido();
 
         System.out.println("\n--- Polimorfismo con array de Animales ---");
-        Animal[] animales = { new Perro(), new Gato(), new Animal() };
+        Animal[] animales = { new Perro(), new Gato() };
         for (Animal animal : animales) {
             animal.hacerSonido();
         }
