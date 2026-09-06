@@ -2,10 +2,10 @@ package ejercicio4_polimorfismo;
 
 /**
  * Clase Perro que hereda de Animal y sobrescribe hacerSonido.
- * 
+ *
  * @author José Mauricio Chavarría González - cg92088
  * @author Kelvin Antonio Velázquez Vásquez - vv22015
- * @version 1.0
+ * @version 1.1
  * @since Agosto 2026
  */
 public class Perro extends Animal {
@@ -13,4 +13,4 @@ public class Perro extends Animal {
     public void hacerSonido() {
         System.out.println("El perro ladra: ¡Guau Guau!");
     }
-} 
+}

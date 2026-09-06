@@ -1,18 +1,16 @@
 package ejercicio5_herencia_multinivel;
 
 /**
- * Clase base Animal.
- * 
- * @author Jose Mauricio Chavarria Gonzalez - cg92088
- * @author Kelvin Antonio Velazquez Vasquez - vv22015
- * @version 1.0
+ * Clase base abstracta Animal.
+ *
+ * @author José Mauricio Chavarría González - cg92088
+ * @author Kelvin Antonio Velázquez Vásquez - vv22015
+ * @version 1.1
  * @since Agosto 2026
  */
-public class Animal {
+public abstract class Animal {
     /**
-     * Metodo que sera sobrescrito en las clases derivadas.
+     * Método que será sobrescrito en las clases derivadas.
      */
-    public void hacerSonido() {
-        System.out.println("El animal hace un sonido generico.");
-    }
+    public abstract void hacerSonido();
 }

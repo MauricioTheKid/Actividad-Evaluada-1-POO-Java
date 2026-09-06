@@ -3,11 +3,12 @@ package ejercicio1_abstraccion;
 /**
  * Clase que representa una cuenta bancaria.
  * Utiliza abstracción de datos para ocultar el detalle de la implementación del
- * saldo.
- * 
+ * saldo. Las validaciones se comunican con excepciones para no mezclar la
+ * lógica del dominio con la salida en consola.
+ *
  * @author José Mauricio Chavarría González - cg92088
  * @author Kelvin Antonio Velázquez Vásquez - vv22015
- * @version 1.0
+ * @version 1.1
  * @since Agosto 2026
  */
 public class CuentaBancaria {
@@ -23,42 +24,39 @@ public class CuentaBancaria {
 
     /**
      * Permite depositar dinero en la cuenta.
-     * 
+     *
      * @param monto Cantidad a depositar (debe ser positiva)
+     * @throws IllegalArgumentException si el monto no es mayor que 0
      */
     public void depositar(double monto) {
         if (monto <= 0) {
-            System.out.println("Error: El monto a depositar debe ser mayor que 0.");
-            return;
+            throw new IllegalArgumentException("Error: El monto a depositar debe ser mayor que 0.");
         }
         saldo += monto;
-        System.out.printf("Depósito exitoso. Saldo actual: $%.2f%n", saldo);
     }
 
     /**
      * Permite retirar dinero de la cuenta.
      * Valida que el monto sea positivo y que haya fondos suficientes.
-     * 
+     *
      * @param monto Cantidad a retirar
+     * @throws IllegalArgumentException si el monto no es válido o no hay fondos
      */
     public void retirar(double monto) {
         if (monto <= 0) {
-            System.out.println("Error: El monto a retirar debe ser mayor que 0.");
-            return;
+            throw new IllegalArgumentException("Error: El monto a retirar debe ser mayor que 0.");
         }
 
         if (monto > saldo) {
-            System.out.println("Error: Fondos insuficientes.");
-            return;
+            throw new IllegalArgumentException("Error: Fondos insuficientes.");
         }
 
         saldo -= monto;
-        System.out.printf("Retiro exitoso. Saldo actual: $%.2f%n", saldo);
     }
 
     /**
      * Devuelve el saldo actual de la cuenta.
-     * 
+     *
      * @return Saldo actual
      */
     public double obtenerSaldo() {
